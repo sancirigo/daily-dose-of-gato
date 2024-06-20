@@ -18,7 +18,7 @@ const link = "https://cataas.com/cat";
 client.once("ready", () => {
   console.log("Ready!");
 
-  cron.schedule("* * * * *", () => {
+  cron.schedule("0 9 * * *", () => {
     const channel = client.channels.cache.get(process.env.DISCORD_CHANNEL_ID);
     if (channel) {
       const image = new AttachmentBuilder(link).setName("cat.jpg");
