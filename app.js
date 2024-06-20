@@ -25,7 +25,10 @@ client.once("ready", () => {
       const embed = new EmbedBuilder()
         .setTitle("Your Daily Gato")
         .setImage("attachment://cat.jpg");
-      channel.send({ embeds: [embed], files: [image] }).catch(console.error);
+      channel
+        .send({ embeds: [embed], files: [image] })
+        .then(() => console.log("message sent"))
+        .catch(console.error);
     } else {
       console.log("Channel not found");
     }
